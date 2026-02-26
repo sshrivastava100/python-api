@@ -27,12 +27,12 @@ jobs:
      uses: sshrivastava100/python-cicd/.github/workflows/python-app.yml@main
      permissions:
        contents: read
+       checks: write
   build:
     needs: [integration]
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      checks: write
       packages: write
       # This is used to complete the identity challenge
       # with sigstore/fulcio when running outside of PRs.
