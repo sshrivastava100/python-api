@@ -24,7 +24,7 @@ env:
 
 jobs:
   integration:
-     uses: sshrivastava100/python-cicd/.github/workflows/python-ci-workflow.yml@main
+     uses: sshrivastava100/python-cicd/.github/workflows/python-app.yml@main
      permissions:
        contents: read
   build:
