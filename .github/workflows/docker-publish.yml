@@ -28,7 +28,7 @@ jobs:
       if: github.event.label.name == 'bug'
       runs-on: ubuntu-latest
       steps:
-        - run: echo 'The label was bug'
+        - run: echo 'The label had bug'
   print_context:
     needs: [run_if_label_matches]
     runs-on: ubuntu-latest
