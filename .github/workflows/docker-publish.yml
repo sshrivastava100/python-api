@@ -6,8 +6,6 @@ name: Docker
 # documentation.
 
 on:
-  #schedule:
-  # - cron: '31 12 * * *'
   push:
     branches: [ "main" ]
     # Publish semver tags as releases.
@@ -24,13 +22,13 @@ env:
 
 jobs:
   print_context:
-     runs-on: ubuntu-latest
-     steps:
-       - env:
-            EVENT_CONTEXT: ${{ toJSON(github.event)}}
+    runs-on: ubuntu-latest
+    env:
+      EVENT_CONTEXT: ${{ toJSON(github.event) }}
+    steps:
+      - name: Print event context
         run: |
-            echo $EVENT_CONTEXT
-   
+          echo "$EVENT_CONTEXT"         
   integration:
      uses: sshrivastava100/python-cicd/.github/workflows/python-app.yml@main
      permissions:
